@@ -4,12 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Klass {
+    final Integer number;
+    protected List<Student> studentList = new ArrayList<>();
+    Teacher teacher;
+    Student leader;
+
+    public Klass(Integer classNum) {
+        this.number = classNum;
+    }
+
     public Integer getNumber() {
         return number;
     }
-
-    protected List<Student> studentList = new ArrayList<>();
-    final Integer number;
 
     public Student getLeader() {
         return leader;
@@ -17,13 +23,6 @@ public class Klass {
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
-    }
-
-    Teacher teacher;
-    Student leader;
-
-    public Klass(Integer classNum) {
-        this.number = classNum;
     }
 
     public String getDisplayName() {

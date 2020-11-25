@@ -7,16 +7,6 @@ import java.util.stream.Collectors;
 public class Teacher extends Person {
     protected final LinkedList<Klass> classList;
 
-    @Override
-    public String introduce() {
-        List<String> classNumStrList = this.classList.stream().map(Klass::getNumber).map(Object::toString).collect(Collectors.toList());
-        return String.format("My name is %s. I am %d years old. I am a Teacher. I teach %s.",
-                this.getName(), this.getAge(),
-                this.classList.size() == 0 ? "No Class" :
-                        "Class " + String.join(", ", classNumStrList)
-        );
-    }
-
     public Teacher(Integer id, String name, Integer age, LinkedList<Klass> classList) {
         super(id, name, age);
         this.classList = classList;
@@ -28,6 +18,16 @@ public class Teacher extends Person {
     public Teacher(Integer id, String name, Integer age) {
         super(id, name, age);
         this.classList = new LinkedList<>();
+    }
+
+    @Override
+    public String introduce() {
+        List<String> classNumStrList = this.classList.stream().map(Klass::getNumber).map(Object::toString).collect(Collectors.toList());
+        return String.format("My name is %s. I am %d years old. I am a Teacher. I teach %s.",
+                this.getName(), this.getAge(),
+                this.classList.size() == 0 ? "No Class" :
+                        "Class " + String.join(", ", classNumStrList)
+        );
     }
 
     public String introduceWith(Student student) {

@@ -4,21 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Klass {
-    public Integer getNumber() {
-        return number;
-    }
-
-    protected List<Student> studentList = new ArrayList<>();
     final Integer number;
-
-    public Student getLeader() {
-        return leader;
-    }
-
+    protected List<Student> studentList = new ArrayList<>();
     Student leader;
 
     public Klass(Integer classNum) {
         this.number = classNum;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public Student getLeader() {
+        return leader;
     }
 
     public String getDisplayName() {

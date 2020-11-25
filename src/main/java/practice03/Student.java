@@ -3,6 +3,11 @@ package practice03;
 public class Student extends Person {
     protected final Integer classNum;
 
+    public Student(String name, Integer age, Integer classNum) {
+        super(name, age);
+        this.classNum = classNum;
+    }
+
     public Integer getKlass() {
         return classNum;
     }
@@ -10,10 +15,5 @@ public class Student extends Person {
     @Override
     public String introduce() {
         return String.format("I am a Student. I am at Class %d.", this.classNum);
-    }
-
-    public Student(String name, Integer age, Integer classNum) {
-        super(name, age);
-        this.classNum = classNum;
     }
 }
