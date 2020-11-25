@@ -40,6 +40,5 @@ public class Klass {
     public void appendMember(Student student) {
         this.studentList.add(student);
         if (this.teacher != null) this.teacher.announceNewMember(student, this);
-        student.klass = this;
     }
 }
